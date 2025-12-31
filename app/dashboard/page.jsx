@@ -1,4 +1,4 @@
-// pages/dashboard.js
+
 "use client"; // enable client-side rendering for hooks like useState/useEffect
 
 import { useEffect, useState } from "react";
