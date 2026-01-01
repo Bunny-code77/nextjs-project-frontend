@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import Navbar from "@/app/components/Navbar";
+import Navbar from "../components/Navbar";
 import Image from "next/image";
 import {
   CalendarDays,
@@ -17,7 +17,7 @@ import {
   PlusCircle,
   Filter,
 } from "lucide-react";
-import img3 from "../images/Dashboard.png";
+import img3 from "/images/Dashboard.png";
 
 // Small hook for animated counters
 const useCountUp = (target, duration = 600) => {

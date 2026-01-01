@@ -1,11 +1,11 @@
 "use client"; // Needed if Navbar or other components use hooks
 
-import Navbar from "@/app/components/Navbar";
+import Navbar from "../components/Navbar";
 import Image from "next/image";
-import img4 from "../images/ServicesColab.png";
-import img5 from "../images/ServicesPost.png";
-import img6 from "../images/ServicesContent.png";
-import img7 from "../images/ServicesAnalytics.png";
+import img4 from "/images/ServicesColab.png";
+import img5 from "/images/ServicesPost.png";
+import img6 from "/images/ServicesContent.png";
+import img7 from "/images/ServicesAnalytics.png";
 
 export default function Services() {
   const features = [

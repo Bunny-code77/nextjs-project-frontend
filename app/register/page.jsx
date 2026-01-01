@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import dashboardBg from "../images/Dashboard.png"; // local image
+import dashboardBg from "/images/Dashboard.png"; // local image
 
 export default function Register() {
   const [formData, setFormData] = useState({
