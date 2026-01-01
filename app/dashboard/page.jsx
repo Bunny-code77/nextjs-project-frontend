@@ -1,10 +1,9 @@
 
-"use client"; // enable client-side rendering for hooks like useState/useEffect
+"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import {
   CalendarDays,
@@ -211,20 +210,19 @@ export default function Dashboard() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <div className="min-h-screen bg-white">
       <main className="max-w-6xl mx-auto px-4 py-8">
         {/* Header */}
         <section className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
           <div className="flex-1">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">
               Dashboard
             </h1>
-            <p className="text-gray-600 mb-2">
+            <p className="text-gray-700 mb-2 text-lg">
               Welcome{user ? `, ${user.name}` : ""}! Plan, schedule and manage
               your social media posts from one place.
             </p>
-            <p className="text-sm text-gray-500 flex items-center gap-2">
+            <p className="text-gray-600 flex items-center gap-2">
               <Bell className="w-4 h-4" />
               Stay consistent on every platform with scheduled content.
             </p>

@@ -1,6 +1,5 @@
-"use client"; // Needed if Navbar or other components use hooks
+"use client";
 
-import Navbar from "../../components/Navbar";
 import Image from "next/image";
 
 export default function Services() {
@@ -28,53 +27,51 @@ export default function Services() {
   ];
 
   return (
-    <>
-      <Navbar />
-
-      <div className="max-w-7xl mx-auto px-6 py-20 space-y-16 bg-gradient-to-br from-purple-50 to-white min-h-screen">
+    <div className="min-h-screen bg-white pt-8">
+      <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
         {/* Header Section */}
-        <header className="text-center space-y-4">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-purple-700 tracking-tight">
+        <header className="text-center space-y-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
             Our Services
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-700 text-xl max-w-3xl mx-auto leading-relaxed">
             From content planning to analytics,{" "}
-            <span className="font-semibold text-purple-700">PostPlanner</span> empowers your entire social media journey —
+            <span className="font-semibold text-purple-600">PostPlanner</span> empowers your entire social media journey —
             designed for teams, creators, and agencies who aim for impact.
           </p>
         </header>
 
         {/* Highlight Section */}
-        <div className="bg-gradient-to-r from-purple-300 to-purple-50 rounded-2xl p-10 text-center shadow-lg">
-          <h2 className="text-2xl font-bold text-purple-800">Why Choose PostPlanner?</h2>
-          <p className="text-gray-700 mt-3 max-w-2xl mx-auto">
+        <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-3xl p-12 text-center shadow-xl">
+          <h2 className="text-3xl font-bold text-white mb-4">Why Choose PostPlanner?</h2>
+          <p className="text-purple-100 text-lg max-w-2xl mx-auto">
             Automate your workflow, collaborate effortlessly, and focus on creativity — 
             while PostPlanner handles the rest.
           </p>
         </div>
 
         {/* Services Cards */}
-        <div className="grid gap-10 grid-cols-1 md:grid-cols-2">
+        <div className="grid gap-12 grid-cols-1 md:grid-cols-2">
           {features.map((f) => (
             <div
               key={f.title}
-              className="bg-white border border-purple-100 rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 p-6 flex flex-col md:flex-row items-center gap-6"
+              className="bg-white border border-gray-200 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 p-8 flex flex-col md:flex-row items-center gap-8"
             >
-              <div className="relative w-full md:w-48 h-40">
+              <div className="relative w-full md:w-56 h-48">
                 <Image
                   src={f.img}
                   alt={f.title}
                   fill
-                  className="rounded-xl object-cover"
-                  sizes="(max-width: 768px) 100vw, 12rem"
+                  className="rounded-2xl object-cover"
+                  sizes="(max-width: 768px) 100vw, 14rem"
                 />
               </div>
-              <div>
-                <h3 className="text-xl font-semibold text-purple-700">{f.title}</h3>
-                <p className="text-gray-600 mt-2 leading-relaxed">{f.desc}</p>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{f.title}</h3>
+                <p className="text-gray-600 text-lg leading-relaxed mb-4">{f.desc}</p>
                 <a
                   href="/"
-                  className="inline-block mt-4 text-purple-700 font-medium hover:text-purple-900 transition-all"
+                  className="inline-flex items-center text-purple-600 font-semibold hover:text-purple-700 transition-colors"
                 >
                   Learn more →
                 </a>
@@ -84,21 +81,21 @@ export default function Services() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center bg-[#287379] text-white rounded-3xl p-10 shadow-inner">
-          <h3 className="text-3xl font-bold mb-3">
+        <div className="text-center bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-3xl p-12 shadow-xl">
+          <h3 className="text-4xl font-bold mb-4">
             Ready to Simplify Your Social Media Strategy?
           </h3>
-          <p className="text-purple-100 mb-6">
+          <p className="text-teal-100 text-lg mb-8 max-w-2xl mx-auto">
             Start creating, scheduling, and analyzing — all in one powerful dashboard.
           </p>
           <a
             href="/dashboard"
-            className="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:bg-purple-100 transition-all duration-200"
+            className="bg-white text-teal-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg"
           >
             Get Started
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 }
