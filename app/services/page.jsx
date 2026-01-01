@@ -89,7 +89,7 @@ export default function Services() {
             Start creating, scheduling, and analyzing — all in one powerful dashboard.
           </p>
           <a
-            href="/dashboard"
+            href="/register"
             className="bg-white text-teal-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg"
           >
             Get Started

@@ -9,13 +9,12 @@ export default function Navbar() {
         </h1>
 
         <div className="flex gap-6 text-sm font-medium">
-          <Link href="/">Home</Link>
-          <Link href="/dashboard">Dashboard</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-          <Link href="/login">Login</Link>
-          <Link href="/register">Register</Link>
+          <Link href="/" className="text-purple-600 hover:text-purple-800 transition-colors">Home</Link>
+          <Link href="/services" className="text-purple-600 hover:text-purple-800 transition-colors">Services</Link>
+          <Link href="/about" className="text-purple-600 hover:text-purple-800 transition-colors">About</Link>
+          <Link href="/contact" className="text-purple-600 hover:text-purple-800 transition-colors">Contact</Link>
+          <Link href="/login" className="text-purple-600 hover:text-purple-800 transition-colors">Login</Link>
+          <Link href="/register" className="text-purple-600 hover:text-purple-800 transition-colors">Register</Link>
         </div>
       </div>
     </nav>
