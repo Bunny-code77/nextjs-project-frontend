@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import Navbar from "@/app/components/Navbar";
 import Image from "next/image";
 import {
   CalendarDays,

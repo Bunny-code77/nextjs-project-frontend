@@ -1,6 +1,6 @@
 "use client"; // Needed if Navbar or other components use hooks
 
-import Navbar from "../components/Navbar";
+import Navbar from "@/app/components/Navbar";
 import Image from "next/image";
 import img4 from "../images/ServicesColab.png";
 import img5 from "../images/ServicesPost.png";
