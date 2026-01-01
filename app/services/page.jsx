@@ -1,33 +1,29 @@
 "use client"; // Needed if Navbar or other components use hooks
 
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import Image from "next/image";
-import img4 from "/images/ServicesColab.png";
-import img5 from "/images/ServicesPost.png";
-import img6 from "/images/ServicesContent.png";
-import img7 from "/images/ServicesAnalytics.png";
 
 export default function Services() {
   const features = [
     {
       title: "Collaboration & Approvals",
       desc: "Multi-level approvals, comments, and version history to keep your workflow smooth and transparent.",
-      img: img4,
+      img: "/images/ServicesColab.png",
     },
     {
       title: "Post Scheduling & Calendar",
       desc: "Visual calendar, flexible scheduling, and real-time previews for each platform.",
-      img: img5,
+      img: "/images/ServicesPost.png",
     },
     {
       title: "Content Library + Editor",
       desc: "Store, organize, and edit all your content assets in one place — from captions to visuals.",
-      img: img6,
+      img: "/images/ServicesContent.png",
     },
     {
       title: "Analytics & Reporting",
       desc: "Gain insights with exportable reports, post performance tracking, and engagement analytics.",
-      img: img7,
+      img: "/images/ServicesAnalytics.png",
     },
   ];
 
@@ -68,8 +64,8 @@ export default function Services() {
                 <Image
                   src={f.img}
                   alt={f.title}
-                  className="rounded-xl object-cover"
                   fill
+                  className="rounded-xl object-cover"
                   sizes="(max-width: 768px) 100vw, 12rem"
                 />
               </div>

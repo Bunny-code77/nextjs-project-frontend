@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import Image from "next/image";
 import {
   CalendarDays,
@@ -17,7 +17,6 @@ import {
   PlusCircle,
   Filter,
 } from "lucide-react";
-import img3 from "/images/Dashboard.png";
 
 // Small hook for animated counters
 const useCountUp = (target, duration = 600) => {
@@ -232,8 +231,10 @@ export default function Dashboard() {
           </div>
           <div className="flex-1 flex justify-center">
             <Image
-              src={img3}
+              src="/images/Dashboard.png"
               alt="Dashboard overview"
+              width={400}
+              height={300}
               className="w-full max-w-sm rounded-lg shadow-md"
             />
           </div>

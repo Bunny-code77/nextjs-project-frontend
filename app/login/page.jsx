@@ -4,7 +4,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import dashboardBg from "/images/Dashboard.png"; // local image
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -44,7 +43,7 @@ export default function Login() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src={dashboardBg}
+          src="/images/Dashboard.png"
           alt="Dashboard Background"
           fill
           className="object-cover"

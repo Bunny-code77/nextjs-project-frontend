@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Image from "next/image";
 
