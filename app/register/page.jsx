@@ -1,4 +1,4 @@
-"use client"; // required for hooks like useState and navigation
+"use client";
 
 import { useState } from "react";
 import axios from "axios";
@@ -19,6 +19,7 @@ export default function Register() {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError("");
   };
 
   const validateForm = () => {
@@ -54,45 +55,45 @@ export default function Register() {
     if (!validateForm()) return;
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/auth/register", {
+      const { data } = await axios.post("/api/auth/register", {
         name: formData.name,
         email: formData.email,
         password: formData.password,
       });
 
+      if (data.token) localStorage.setItem("token", data.token);
       setSuccess("Registration successful! Redirecting to login...");
-      setTimeout(() => router.push("/login"), 1500);
+      setTimeout(() => router.push("/login"), 1000);
     } catch (err) {
-      console.error("❌ Registration error:", err.response?.data || err);
-      setError(err.response?.data?.message || "Server error. Try again later.");
+      console.error("Registration error:", err.response?.data || err);
+      setError(err.response?.data?.message || "Server error. Please try again later.");
     }
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center relative">
-      {/* Background */}
+    <div className="min-h-screen flex justify-center items-center relative py-10">
       <div className="absolute inset-0">
         <Image
           src="/images/Dashboard.png"
           alt="Dashboard Background"
           fill
+          priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
       </div>
 
-      {/* Form Card */}
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-2xl w-full max-w-md border border-purple-100"
+        className="relative z-10 bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-2xl w-full max-w-md border border-purple-100"
       >
         <h2 className="text-3xl font-extrabold text-center text-purple-700 mb-2">
           Create Account
         </h2>
         <p className="text-center text-gray-500 mb-4">Join PostPlanner today</p>
 
-        {error && <p className="text-red-500 text-center mb-2">{error}</p>}
-        {success && <p className="text-green-500 text-center mb-2">{success}</p>}
+        {error && <p className="text-red-500 text-center mb-3">{error}</p>}
+        {success && <p className="text-green-600 text-center mb-3">{success}</p>}
 
         <input
           type="text"
@@ -101,7 +102,7 @@ export default function Register() {
           value={formData.name}
           onChange={handleChange}
           autoComplete="name"
-          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-3"
+          className="w-full bg-white text-gray-900 placeholder:text-gray-500 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-3"
         />
         <input
           type="email"
@@ -110,7 +111,7 @@ export default function Register() {
           value={formData.email}
           onChange={handleChange}
           autoComplete="email"
-          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-3"
+          className="w-full bg-white text-gray-900 placeholder:text-gray-500 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-3"
         />
         <input
           type="password"
@@ -119,7 +120,7 @@ export default function Register() {
           value={formData.password}
           onChange={handleChange}
           autoComplete="new-password"
-          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-3"
+          className="w-full bg-white text-gray-900 placeholder:text-gray-500 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-3"
         />
         <input
           type="password"
@@ -128,7 +129,7 @@ export default function Register() {
           value={formData.confirmPassword}
           onChange={handleChange}
           autoComplete="new-password"
-          className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-5"
+          className="w-full bg-white text-gray-900 placeholder:text-gray-500 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-5"
         />
 
         <button
